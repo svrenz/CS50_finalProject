@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main class="d-flex justify-content-center align-items-center" id="agFondo">
+    <div class="bg-light" style="height: 85vh; overflow-y: auto; margin-top: 5rem">
+        <form action="agendando" method="POST">
+            <p class="text-center fs-2">Formulario de citas</p>
+                <div class="input-group mb-3">
+                    <label class="input-group-text">Nombres</label>
+                    <input type="text" aria-label="First name" class="form-control" name="primerNombre" placeholder="Primer nombre">
+                    <input type="text" aria-label="Middle name" class="form-control" name="segundoNombre" placeholder="Segundo nombre">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text">Apellidos</label>
+                    <input type="text" aria-label="Last name" class="form-control" name="primerApellido" placeholder="Primer apellido">
+                    <input type="text" aria-label="Second last name" class="form-control" name="segundoApellido" placeholder="Segundo apellido">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text">Cédula</label>
+                    <input type="text" aria-label="cedula" class="form-control" name="cedula" placeholder="123-456789-1234A" pattern="^\d{3}-\d{6}-\d{4}[A-Z]$">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text">Teléfono</label>
+                    <input type="text" aria-label="telefono" class="form-control" name="telefono" placeholder="telefono">
+                </div>
+            <div class="input-group mb-3">
+                <label for="calendario" class="input-group-text">Selecciona el día</label>
+                <input type="date" class="form-control" id="calendario" name="calendario">
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text">Hora</label>
+                <select class="form-select" name="hora">
+                    <option value="1">8 AM</option>
+                    <option value="2">9 AM</option>
+                    <option value="3">10 AM</option>
+                    <option value="4">11 AM</option>
+                    <option value="5">12 PM</option>
+                    <option value="6">1 PM</option>
+                    <option value="7">2 PM</option>
+                    <option value="8">3 PM</option>
+                    <option value="9">4 PM</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text">Servicio</label>
+                <select class="form-select" name="servicio">
+                    <option value="1">Odontología Preventiva.</option>
+                    <option value="2">Rehabilitación Oral y Estética Dental.</option>
+                    <option value="3">Implantología Quirúrgica y Protésica.</option>
+                    <option value="4">Periodoncia.</option>
+                    <option value="5">Ortodoncia.</option>
+                    <option value="6">Endodoncia.</option>
+                </select>
+            </div>
+            <div class="input-group mb-2">
+                <label class="input-group-text">Descripción</label>
+                <textarea class="form-control" aria-label="With textarea" rows="3" name="descripcion"></textarea>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+                <button type="submit">Agendar</button>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock content %}
+
